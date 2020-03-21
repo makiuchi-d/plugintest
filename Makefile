@@ -8,9 +8,6 @@ plugintest: $(srcs)
 %.so: plugins/%/main.go records/record.go
 	go build -buildmode=plugin -o "$@" "./$<"
 
-%.so: plugins/% records/record.go
-	go build -buildmode=plugin -o "$@" "./$<"
-
 run: plugintest
 	./plugintest
 
